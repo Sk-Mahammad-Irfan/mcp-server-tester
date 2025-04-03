@@ -38,7 +38,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-8">
+    <div className="min-h-screen flex items-center justify-center p-8">
       <div className="bg-white w-full sm:max-w-xl rounded-lg shadow-lg p-8 space-y-6">
         <h1 className="text-3xl font-semibold text-center text-black">
           MCP Server Tester

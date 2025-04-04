@@ -6,16 +6,17 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
-app.use(cors());
 const PORT = process.env.PORT || 5000;
 
+// CORS options for specific frontend URL
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
-  optionsSuccessStatus: 200,
+  origin: process.env.FRONTEND_URL, // Make sure FRONTEND_URL is correctly set in .env
+  optionsSuccessStatus: 200, // For legacy browser support (IE11)
 };
 
+app.use(cors(corsOptions)); // Use only this one
+
 app.use(express.json());
-app.use(cors(corsOptions));
 
 app.post("/test-server", async (req, res) => {
   const { installationCode } = req.body;
